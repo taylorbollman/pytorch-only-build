@@ -2,10 +2,9 @@ services:
   web:
     build:
       context: .
-    command: tail -f /dev/null  # Add this line
+    command: /bin/sh -c "tail -f /dev/null"  # This should work
     stop_signal: SIGINT
     ports:
       - '8000:8000'
     volumes:
       - .:/code
-
