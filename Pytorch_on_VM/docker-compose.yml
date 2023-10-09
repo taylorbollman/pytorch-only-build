@@ -1,5 +1,6 @@
 services:
   web:
+    command: tail -f /dev/null
     build:
       context: .
     stop_signal: SIGINT
