@@ -9,10 +9,9 @@ RUN apt-get update && apt-get install -y curl build-essential
 
 # Install and set a specific Rust version
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
-RUN rustup install 1.53.0
-RUN rustup default 1.53.0
-RUN rustup update
+RUN /bin/bash -c "source $HOME/.cargo/env && rustup install 1.53.0 && rustup default 1.53.0 && rustup update"
 
+# Update the PATH to include .cargo/bin
 ENV PATH="/root/.cargo/bin:${PATH}"
 
 # Copy the requirements file into the container
