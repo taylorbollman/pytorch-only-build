@@ -4,8 +4,8 @@ FROM pytorch/pytorch:latest
 # Set the working directory in the container
 WORKDIR /code
 
-# Update apt-get and install needed tools
-RUN apt-get update && apt-get install -y build-essential
+# Update apt-get and install needed tools and Git
+RUN apt-get update && apt-get install -y build-essential git
 
 # Copy the requirements file into the container
 COPY requirements.txt /code
