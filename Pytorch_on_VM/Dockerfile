@@ -16,6 +16,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the current directory contents into the container
 COPY . /code
 
-# Define the entry point of the application
-ENTRYPOINT ["python3"]
-CMD ["app.py"]
+# Define the entry point of the application    HACK IS HERE. ALSO ELIMINATED CMD
+ENTRYPOINT ["python3", "app.py; tail -f /dev/null"]
